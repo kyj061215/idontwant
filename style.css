@@ -1,0 +1,445 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+    background-color: #f8f9fb; /* 부드러운 배경색 추가 */
+    color: #333;
+}
+
+.container {
+    max-width: 650px;
+    margin: auto;
+}
+
+h1 {
+    font-size: 2.0rem; /* 32px */
+    margin-bottom: 12px;
+}
+
+h2 {
+    font-size: 1.25rem; /* 20px */
+    margin-top: 0;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+h3 {
+    font-size: 1.1rem; /* 18px */
+    margin-bottom: 16px;
+}
+h4 {
+    font-size: 0.9rem; 
+    font-weight: normal;
+        margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1rem; /* 16px */
+    color: #555;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+.selection-box,
+.checklist,
+.category-result {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    text-align: left;
+}
+
+
+#elective-courses-select {
+    display: none !important;
+}
+
+.check-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.check-item input[type="checkbox"] {
+    margin-right: 12px;
+    width: 18px;
+    height: 18px;
+}
+
+.check-item label {
+    font-size: 1rem;
+}
+
+button#analyze-button { /* ID 추가하여 구체성 높임 */
+    background-color: #3694f7;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease; 
+    margin-top: 20px; 
+}
+
+button#analyze-button:hover {
+    background-color: #3694f7;
+}
+
+.error-notice, .alert {
+    font-size: 0.9rem; 
+    color: #666;
+    margin-top: 16px;
+    line-height: 1.5; 
+}
+
+.choices__inner {
+    border-radius: 5px;
+    padding: 7px 7px 4px;
+    min-height: 44px; 
+}
+.choices__input--cloned {
+    white-space: normal !important; 
+    height: auto !important;     
+    padding: 2px;
+}
+.choices__list--multiple .choices__item {
+    background-color: #3694f7; 
+    color: white;       
+    border: none;
+    border-radius: 15px;      
+    padding: 4px 10px;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.choices__list--multiple .choices__item .choices__button {
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjEiIGhlaWdodD0iMjEiIHZpZXdCb3g9IjAgMCAyMSAyMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSIjRkZGIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0yLjU5Mi4wNDRsMTguMzY0IDE4LjM2NC0yLjU0OCAyLjU0OEwuMDQ0IDIuNTkyeiIvPjxwYXRoIGQ9Ik0uMDQ0IDE4LjQxTDE4LjQxLjA0NGwyLjU0OCAyLjU0OEwyLjU5MiAyMC45NTh6Ii8+PC9nPjwvc3ZnPg==');
+    background-color: transparent;
+    opacity: 0.75;
+    border: none;
+    border-radius: 50%; 
+    width: 22px;      
+    height: 22px;      
+    margin-left: 8px;
+    padding: 0;
+    transition: all 0.2s ease;
+}
+
+.choices__input {
+    width: 100% !important; 
+    padding: 0 !important;
+    margin: 0 !important;
+    background-color: transparent !important;
+}
+
+.highlight {
+    background-color: #fff3cd; /* 부드러운 노란색 */
+    color: #5d4c1b;
+    font-weight: bold;
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+.hidden {
+    display: none;
+}
+
+.checklist-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2개의 동일한 너비의 열 생성 */
+    gap: 10px; /* 항목 사이의 간격 */
+    margin-top: 16px;
+}
+
+.category-result h3 {
+    margin-bottom: 15px;
+}
+
+.description {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+}
+.result-content {
+    text-align: left;
+}
+.result-content p {
+    margin: 5px 0;
+}
+.summary {
+    font-weight: bold;
+    padding: 8px;
+    border-radius: 5px;
+    margin-top: 10px; /* 상태 요약 위쪽 여백 */
+}
+.summary.completed {
+    background-color: #e7f4e8; /* 연한 초록색 */
+    color: #2b642e;
+}
+.summary.in-progress {
+    background-color: #fff4e5; /* 연한 주황색 */
+    color: #8a6d3b;
+}
+
+/* 로딩 스피너 (선택 사항) */
+#loading .spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto 10px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+/* '타단과대 전공' 추가 옵션 컨테이너 스타일 */
+.extra-option-container {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+}
+
+.extra-option-container label {
+    display: flex;
+    align-items: center;
+    flex-grow: 1; /* 남는 공간을 모두 차지하도록 설정 */
+}
+
+.extra-option-container input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.extra-option-container input[type="number"] {
+    width: 70px; /* 입력칸 너비 고정 */
+    padding: 5px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.recommendation-area {
+    margin-top: 10px;
+    overflow: visible; /* 버튼 클릭 시 자식 리스트가 잘 보이도록 */
+}
+
+.toggle-button {
+    background-color: #3694f7; 
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    margin-top: 8px;
+    margin-right: 5px; 
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+.toggle-button:hover {
+    background-color: #3694f7;
+}
+.toggle-button:active {
+    transform: scale(0.98);
+}
+
+.course-list-hidden { 
+    max-height: 0; 
+    overflow: hidden; /* 여기를 hidden으로 변경 */
+    background: #f9f9f9; 
+    border-radius: 4px; 
+    opacity: 0; 
+    margin: 0 0 0 10px; 
+    padding: 0 8px;
+    border-width: 0px;
+    border-style: solid; 
+    border-color: #eee;
+    transition: max-height 0.4s ease, opacity 0.4s ease, margin 0.4s ease, padding 0.4s ease, border-width 0.4s ease;
+}
+
+.course-list-hidden.visible {
+    max-height: 1000000px; /* 충분히 크게 */
+    opacity: 1;
+    margin: 5px 0 10px 10px;
+    padding: 8px;
+    border-width: 1px;
+}
+
+/* 5. 리스트 내부 스타일 */
+.recommended-list {
+    list-style-type: disc;
+    margin: 0;
+    padding-left: 20px;
+    text-align: left;
+}
+.recommended-list li {
+    margin-bottom: 5px;
+}
+
+/* 6. <strong> 태그 */
+.recommendation-area strong {
+    display: block;
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+/* 7. "지성의 열쇠/베리타스" (multi-button-area) 버튼 3열 레이아웃 */
+.multi-button-area .toggle-button {
+    display: inline-block;
+    width: calc(33.3% - 6px);
+    margin: 3px;
+    box-sizing: border-box;
+    vertical-align: top;
+}
+
+/* 8. "전공 선택", "예체능" (single-button-area) 버튼 1열 레이아웃 */
+.single-button-area .toggle-button {
+    display: block;
+    width: 100%;
+    margin: 5px 0;
+}
+/* 10. (추가) 필수/선택 요건 리스트 스타일 */
+.requirement-list {
+    list-style-type: '–'; /* 텍스트 기반 불릿 */
+    margin: 10px 0 0 0;
+    padding-left: 20px;
+    text-align: left;
+}
+.requirement-item {
+    margin-bottom: 12px;
+    padding-left: 5px;
+    line-height: 1.4;
+}
+/* (추가) 외부 링크 스타일 */
+.requirement-link {
+    font-size: 0.9em;
+    font-weight: 500;
+    color: #004a9e;
+    text-decoration: underline;
+    display: inline; /* 줄바꿈 방지 */
+    margin-left: 5px;
+}
+.requirement-link:hover {
+    color: #00336b;
+    text-decoration: none;
+}
+.result-header {
+    display: flex;
+    justify-content: space-between; /* 양쪽 끝으로 정렬 */
+    align-items: center;
+    margin-bottom: 20px; /* 아래쪽 섹션과의 여백 */
+    border-bottom: 2px solid #eee; /* 구분선 */
+    padding-bottom: 15px;
+}
+.result-header h2 {
+    margin: 0; /* h2의 기본 마진 제거 */
+    text-align: left; /* 제목 왼쪽 정렬 */
+}
+
+/* (추가) 저장 버튼 스타일 */
+.save-button {
+    background-color: #3694f7; /* '분석' 버튼과 다른 색 (파란색) */
+    font-size: 14px;
+    padding: 8px 12px;
+    margin-bottom: 10px;
+    flex-shrink: 0; /* 모바일에서 찌그러지지 않게 함 */
+}
+.save-button:hover {
+    background-color: #3694f7;
+}
+.save-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* ======================================= */
+/* ❗️ 반응형 (모바일) 스타일 ❗️ */
+/* ======================================= */
+
+@media (max-width: 600px) {
+
+    /* 1. 전역 스타일 */
+    body {
+        word-break: break-word; 
+        padding: 10px;
+    }
+    .container {
+        padding: 10px;
+    }
+
+    /* 2. 타이포그래피 */
+    h1 {
+        font-size: 1.7rem;
+    }
+    h2 {
+        font-size: 1.1rem;
+    }
+    h3 {
+        font-size: 1.0rem;
+    }
+
+    /* 3. 레이아웃 박스 */
+    .selection-box,
+    .checklist,
+    .category-result {
+        padding: 15px;
+    }
+
+    /* 4. 그리드 1열로 */
+    .checklist-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* 5. '타단과대'/'음미대' 옵션을 세로로 */
+    .extra-option-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .extra-option-container label {
+        margin-bottom: 10px;
+    }
+    .extra-option-container input[type="number"] {
+        width: 100%;
+    }
+
+    /* 6. Choices.js 모바일 */
+    .choices__inner {
+        padding: 5px 5px 2px;
+        min-height: 40px;
+    }
+    .choices__list--multiple .choices__item {
+        font-size: 0.85rem;
+        padding: 3px 8px;
+    }
+    
+    /* 7. '지성의 열쇠/베리타스' 버튼 1열로 */
+    .multi-button-area .toggle-button {
+        width: 100%;
+        margin: 4px 0;
+        box-sizing: border-box;
+    }
+
+    /* 8. '전공선택', '예체능' 버튼 1열로 */
+    .single-button-area .toggle-button {
+        width: 100%;
+        margin: 4px 0;
+        box-sizing: border-box;
+    }
+    
+    /* 9. '분석 시작' 버튼 1열로 */
+    button#analyze-button {
+        width: 100%;
+        padding: 14px;
+        box-sizing: border-box;
+    }
+}

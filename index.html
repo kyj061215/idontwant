@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>서울대학교 의예과 25학번 수료 조건 분석</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css"/>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div class="container">
+        <h1>서울대학교 의예과 25학번 수료 조건 분석</h1>
+        <p class="notice">❗️본 사이트는 서울대학교 의예과 학생회가 학우분들의 편의를 위해 제작한 사이트로, <br>오류가 발생할 수 있으니 참고용으로만 사용해주시길 바랍니다.❗️</p>
+        <p class="notice2">*제공되는 정보는 참고용이며 정확성·완전성에 대해 보장하지 않습니다. <br>이용으로 인한 직접·간접 손해에 대해 학생회는 책임을 지지 않습니다.</p>
+        <p class="alert">*지금까지 수강한 <span class="highlight">모든 과목</span>과 이수한 <span class="highlight">모든 비교과</span>를 체크해주세요.</p>
+
+        <div class="selection-box">
+            <h2>교과목 이수 현황</h2>
+            <div class="course-section">
+                <h3>1. 전공 필수 (5과목)</h3>
+                <div id="required-courses-list" class="checklist-grid">
+                    <div><label><input type="checkbox" value="의예과신입생세미나"> 의예과신입생세미나</label></div>
+                    <div><label><input type="checkbox" value="의학입문"> 의학입문</label></div>
+                    <div><label><input type="checkbox" value="자유주제탐구"> 자유주제탐구</label></div>
+                    <div><label><input type="checkbox" value="의학연구의 이해"> 의학연구의 이해</label></div>
+                    <div><label><input type="checkbox" value="기초의학통계학 및 실험"> 기초의학통계학 및 실험</label></div>
+                </div>
+            </div>
+
+            <div class="course-section">
+                <h3>2. 전공 선택 (12학점 이상)</h3>
+                <select id="elective-courses-select" multiple>
+                    <option value="국제의학의 이해">국제의학의 이해</option>
+                    <option value="몸 속으로의 여행">몸 속으로의 여행</option>
+                    <option value="바이오헬스케어와 혁신사고">바이오헬스케어와 혁신사고</option>
+                    <option value="사례병 질병 진단의 실제">사례병 질병 진단의 실제</option>
+                    <option value="사회와 의료현장에서의 리빙랩">사회와 의료현장에서의 리빙랩</option>
+                    <option value="세계예술 속 의학의 이해">세계예술 속 의학의 이해</option>
+                    <option value="세포분자생물학">세포분자생물학</option>
+                    <option value="의대생을 위한 고전읽기">의대생을 위한 고전읽기</option>
+                    <option value="의료와 데이터사이언스">의료와 데이터사이언스</option>
+                    <option value="의생명과학 논문의 이해">의생명과학 논문의 이해</option>
+                    <option value="의학연구의 실제">의학연구의 실제</option>
+                    <option value="통일의료">통일의료</option>
+                </select>
+</div>
+            <div class="sub-section">
+                <h4>*타단과대 전공(교양 X)을 수강한 경우, 아래를 체크 후 <span class="highlight">수강한 학점</span>을 입력해주세요</h4>
+                <div class="extra-option-container">
+                    <label>
+                        <input type="checkbox" id="other-college-checkbox">
+                        타단과대 전공 수강 (자연대, 농생대, 공대, 수의대, 치대, 혁신공유학부)
+                    </label>
+                    <input type="number" id="other-college-count" min="0" placeholder="입력">
+                </div>
+            </div>
+
+            <div class="course-section">
+            <h3>3. 필수 교양</h3>
+            <div id="liberal-arts-courses-list" class="checklist-grid">
+                <div><label><input type="checkbox" value="대학글쓰기 1"> 대학글쓰기 1</label></div>
+                <div><label><input type="checkbox" value="대학글쓰기 2: 과학기술글쓰기"> 대학글쓰기 2: 과학기술글쓰기</label></div>
+                <div><label><input type="checkbox" value="말하기와 토론"> 말하기와 토론</label></div>
+                <div><label><input type="checkbox" value="생물학"> 생물학</label></div>
+                <div><label><input type="checkbox" value="생물학실험"> 생물학실험</label></div>
+                <div><label><input type="checkbox" value="생명과학을 위한 수학/고급수학+수연"> 생명과학을 위한 수학/고급수학+수연</label></div>
+                <div><label><input type="checkbox" value="화학/고급화학"> 화학/고급화학</label></div>
+                <div><label><input type="checkbox" value="화학실험"> 화학실험</label></div>
+</div>
+                <div class="sub-section">
+                    <h4>- 외국어(2과목)</h4>
+                    <select id="foreign-language-select" multiple>
+                        <option value="대학영어1">대학영어1</option>
+                        <option value="대학영어2">대학영어2</option>
+                        <option value="고급영어">고급영어</option>
+                        <option value="외국어1">외국어1</option>
+                        <option value="외국어2">외국어2</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="course-section">
+                <h3>4. 교양 - 지성의 열쇠 (3영역 모두 3학점 이상, 총 9학점 이상)</h3>
+                <select id="foundations-of-academia-select" multiple>
+                    <option value="고대그리스.로마문학의 세계">고대그리스.로마문학의 세계</option>
+                    <option value="고고학개론">고고학개론</option>
+                    <option value="경영학개론">경영학개론</option>
+                    <option value="공공행정의 이해">공공행정의 이해</option>
+                    <option value="공연예술의 이해">공연예술의 이해</option>
+                    <option value="교육의 이해">교육의 이해</option>
+                    <option value="국가와 시민">국가와 시민</option>
+                    <option value="국제정치학입문">국제정치학입문</option>
+                    <option value="글로벌 이슈와 윤리적 사고">글로벌 이슈와 윤리적 사고</option>
+                    <option value="기업과 사회">기업과 사회</option>
+                    <option value="규장각과 한국문화">규장각과 한국문화</option>
+                    <option value="근·현대 한국민족주의">근·현대 한국민족주의</option>
+                    <option value="근대 한국의 역사와 문화">근대 한국의 역사와 문화</option>
+                    <option value="남북관계와 통일의 전망">남북관계와 통일의 전망</option>
+                    <option value="남북분단과 한국전쟁">남북분단과 한국전쟁</option>
+                    <option value="논리학">논리학</option>
+                    <option value="도스토예프스키와 톨스토이">도스토예프스키와 톨스토이</option>
+                    <option value="도시의 문화사">도시의 문화사</option>
+                    <option value="독일명작의 이해">독일명작의 이해</option>
+                    <option value="독일어권 문화의 이해">독일어권 문화의 이해</option>
+                    <option value="동서문명의 만남과 실크로드">동서문명의 만남과 실크로드</option>
+                    <option value="동서양 명작 읽기">동서양 명작 읽기</option>
+                    <option value="동시대 미술과 현장">동시대 미술과 현장</option>
+                    <option value="동양미술사입문">동양미술사입문</option>
+                    <option value="동양의 고전">동양의 고전</option>
+                    <option value="동양예술론입문">동양예술론입문</option>
+                    <option value="동양철학의 고전">동양철학의 고전</option>
+                    <option value="동양철학의 이해">동양철학의 이해</option>
+                    <option value="디자인과 생활">디자인과 생활</option>
+                    <option value="라틴아메리카 문학과 사회">라틴아메리카 문학과 사회</option>
+                    <option value="러시아인의 삶과 문화">러시아인의 삶과 문화</option>
+                    <option value="러시아명작의 이해">러시아명작의 이해</option>
+                    <option value="르네상스의 세계">르네상스의 세계</option>
+                    <option value="문명 의 기원">문명의 기원</option>
+                    <option value="문학 속 인간과 기계">문학 속 인간과 기계</option>
+                    <option value="문학과 공연예술">문학과 공연예술</option>
+                    <option value="문학과 사회">문학과 사회</option>
+                    <option value="문학과 영상">문학과 영상</option>
+                    <option value="문학과 정신분석">문학과 정신분석</option>
+                    <option value="문학과 철학의 대화">문학과 철학의 대화</option>
+                    <option value="문학으로 읽는 서양문명">문학으로 읽는 서양문명</option>
+                    <option value="미국문화와 현대사회의 이해">미국문화와 현대사회의 이해</option>
+                    <option value="미디어 리터러시의 세계">미디어 리터러시의 세계</option>
+                    <option value="미술론입문">미술론입문</option>
+                    <option value="미학과 예술론">미학과 예술론</option>
+                    <option value="법과 가치">법과 가치</option>
+                    <option value="법학개론">법학개론</option>
+                    <option value="부모교육">부모교육</option>
+                    <option value="복지국가의 이해">복지국가의 이해</option>
+                    <option value="사랑과 일, 그리고 젠더">사랑과 일, 그리고 젠더</option>
+                    <option value="사상과 윤리">사상과 윤리</option>
+                    <option value="사회학의 이해">사회학의 이해</option>
+                    <option value="사회철학의 이해">사회철학의 이해</option>
+                    <option value="삶과 교육">삶과 교육</option>
+                    <option value="생활공간과 인간">생활공간과 인간</option>
+                    <option value="성과 사랑의 역사">성과 사랑의 역사</option>
+                    <option value="섹슈얼리티와 성평등">섹슈얼리티와 성평등</option>
+                    <option value="소비자와 시장">소비자와 시장</option>
+                    <option value="스페인어권 문화의 이해">스페인어권 문화의 이해</option>
+                    <option value="스페인어권명작의 이해">스페인어권명작의 이해</option>
+                    <option value="서양근대문학의 이해">서양근대문학의 이해</option>
+                    <option value="서양미술사입문">서양미술사입문</option>
+                    <option value="서양연극의 이해">서양연극의 이해</option>
+                    <option value="서양의 문화적 전통">서양의 문화적 전통</option>
+                    <option value="서양문명의 역사 1: 고대에서 르네상스까지">서양문명의 역사 1: 고대에서 르네상스까지</option>
+                    <option value="서양문명의 역사 2: 종교개혁에서 냉전까지">서양문명의 역사 2: 종교개혁에서 냉전까지</option>
+                    <option value="서양철학의 고전">서양철학의 고전</option>
+                    <option value="서양철학의 이해">서양철학의 이해</option>
+                    <option value="성의 철학과 성윤리">성의 철학과 성윤리</option>
+                    <option value="세계문학과 영문학">세계문학과 영문학</option>
+                    <option value="세계종교입문">세계종교입문</option>
+                    <option value="역사 속의 중화와 그 이웃">역사 속의 중화와 그 이웃</option>
+                    <option value="역사 속의 전쟁과 평화">역사 속의 전쟁과 평화</option>
+                    <option value="역사와 역사 재현">역사와 역사 재현</option>
+                    <option value="영화 속 세계정치">영화 속 세계정치</option>
+                    <option value="영미 대중소설의 이해">영미 대중소설의 이해</option>
+                    <option value="영미 문화의 이해">영미 문화의 이해</option>
+                    <option value="영시의 이해">영시의 이해</option>
+                    <option value="영상예술의 이해">영상예술의 이해</option>
+                    <option value="예술과 과학">예술과 과학</option>
+                    <option value="예술과 사회">예술과 사회</option>
+                    <option value="예술과 신화">예술과 신화</option>
+                    <option value="예술의 가치와 비평">예술의 가치와 비평</option>
+                    <option value="음악과 사회">음악과 사회</option>
+                    <option value="음악론입문">음악론입문</option>
+                    <option value="이중언어사용">이중언어사용</option>
+                    <option value="이슬람 문명의 역사">이슬람 문명의 역사</option>
+                    <option value="인간과 문화">인간과 문화</option>
+                    <option value="인권, NGO, 세계시민사회">인권, NGO, 세계시민사회</option>
+                    <option value="인물로 본 한국사">인물로 본 한국사</option>
+                    <option value="인도의 전통과 현대">인도의 전통과 현대</option>
+                    <option value="일본의 인물과 역사">일본의 인물과 역사</option>
+                    <option value="자아탐색과 자아실현">자아탐색과 자아실현</option>
+                    <option value="정치와 정치이념">정치와 정치이념</option>
+                    <option value="정치학개론">정치학개론</option>
+                    <option value="젼더와 범죄">젠더와 범죄</option>
+                    <option value="젠더와 법">젠더와 법</option>
+                    <option value="주권국가와 국제법원">주권국가와 국제법원</option>
+                    <option value="지구화 시대의 공공외교">지구화 시대의 공공외교</option>
+                    <option value="창작의 세계">창작의 세계</option>
+                    <option value="책임감과 윤리">책임감과 윤리</option>
+                    <option value="철학개론">철학개론</option>
+                    <option value="철학으로 예술 보기">철학으로 예술 보기</option>
+                    <option value="테마 중국사">테마 중국사</option>
+                    <option value="페미니즘 미학과 예술">페미니즘 미학과 예술</option>
+                    <option value="한국 문학의 깊이와 상상력">한국 문학의 깊이와 상상력</option>
+                    <option value="한국 고대사의 쟁점">한국 고대사의 쟁점</option>
+                    <option value="한국 문화와 불교">한국 문화와 불교</option>
+                    <option value="한국 문화와 유교사회">한국 문화와 유교사회</option>
+                    <option value="한국 미술사 입문">한국 미술사 입문</option>
+                    <option value="한국 문학과 문화예술">한국 문학과 문화예술</option>
+                    <option value="한국 문학과 세계문학">한국 문학과 세계문학</option>
+                    <option value="한국 문학과 여행">한국 문학과 여행</option>
+                    <option value="한국사">한국사</option>
+                    <option value="한국사의 새로운 해석">한국사의 새로운 해석</option>
+                    <option value="한국의 문화유산">한국의 문화유산</option>
+                    <option value="한국의 신화">한국의 신화</option>
+                    <option value="한국의 한자와 한자어">한국의 한자와 한자어</option>
+                    <option value="한국인의 언어와 문화">한국인의 언어와 문화</option>
+                    <option value="한국현대사 읽기">한국현대사 읽기</option>
+                    <option value="한국현대사의 이해">한국현대사의 이해</option>
+                    <option value="한글 맞춤법의 이론과 실제">한글 맞춤법의 이론과 실제</option>
+                    <option value="한자와 동양문화">한자와 동양문화</option>
+                    <option value="현대 경제의 이해">현대 경제의 이해</option>
+                    <option value="현대 국가와 행정">현대 국가와 행정</option>
+                    <option value="현대 문화와 기독교">현대 문화와 기독교</option>
+                    <option value="현대 미술의 이해">현대 미술의 이해</option>
+                    <option value="현대 사회와 국제어">현대 사회와 국제어</option>
+                    <option value="현대 사회와 법">현대 사회와 법</option>
+                    <option value="현대 사회와 윤리">현대 사회와 윤리</option>
+                    <option value="현대 사회의 생로병사">현대 사회의 생로병사</option>
+                    <option value="현대 정치의 이해">현대 정치의 이해</option>
+                    <option value="현대 종교와 문화">현대 종교와 문화</option>
+                </select>
+            <p class="description" style="margin-top: 10px;">
+                *문화 해석과 상상, 역사적 탐구화 철학적 사유, 인간의 이해와 사회 분석 각 영역 3학점씩 이수하여야 합니다.
+                </p>
+            </div>
+
+            <div class="course-section">
+                <h3>5. 베리타스 (3학점 이상)</h3>
+                <div id="veritas-courses-list" class="checklist-grid">
+                    <div class="check-item">
+                        <input type="checkbox" id="veritas-completed-check" value="베리타스_이수_3학점_단일체크">
+                        <label for="veritas-completed-check">베리타스 교양 과목을 3학점 이상 이수했습니다.</label>
+                    </div>
+                </div>
+                <p class="description" style="margin-top: 10px;">
+                   * 1개의 베리타스 교양 과목 (3학점)을 이수해야 합니다.
+                </p>
+            </div>
+            
+<div class="course-section">
+                <h3>6. 예체능 (3학점 이상)</h3>
+                <select id="arts-and-sports-select" multiple>
+                    <option value="교양연주-가야금">교양연주-가야금</option>
+                    <option value="교양연주-거문고">교양연주-거문고</option>
+                    <option value="교양연주-단소">교양연주-단소</option>
+                    <option value="교양연주-색소폰1">교양연주-색소폰1</option>
+                    <option value="교양연주-합창">교양연주-합창</option>
+                    <option value="교양연주-해금">교양연주-해금</option>
+                    <option value="골프초급">골프초급</option>
+                    <option value="교양연주">교양연주</option>
+                    <option value="농구초급">농구초급</option>
+                    <option value="달리기와 건강">달리기와 건강</option>
+                    <option value="댄스스포츠">댄스스포츠</option>
+                    <option value="도예의 기초">도예의 기초</option>
+                    <option value="배구">배구</option>
+                    <option value="배드민턴초급">배드민턴초급</option>
+                    <option value="소묘의 기초">소묘의 기초</option>
+                    <option value="수묵화의 기초">수묵화의 기초</option>
+                    <option value="수영 1">수영 1</option>
+                    <option value="수영 2">수영 2</option>
+                    <option value="수영 3">수영 3</option>
+                    <option value="수영 4">수영 4</option>
+                    <option value="수영 5">수영 5</option>
+                    <option value="수채화의 기초">수채화의 기초</option>
+                    <option value="야구">야구</option>
+                    <option value="양궁">양궁</option>
+                    <option value="에어로빅">에어로빅</option>
+                    <option value="체력단련">체력단련</option>
+                    <option value="축구">축구</option>
+                    <option value="탁구초급">탁구초급</option>
+                    <option value="탁구중급">탁구중급</option>
+                    <option value="태권도">태권도</option>
+                    <option value="테니스초급">테니스초급</option>
+                    <option value="테니스중급">테니스중급</option>
+                    <option value="핸드볼">핸드볼</option>
+                    <option value="호신술">호신술</option>
+                    <option value="한국무용">한국무용</option>
+                    <option value="현대무용">현대무용</option>
+                </select>
+    </div>
+            <div class="sub-section">
+                <h4>*음미대, 인문대 미학과 전공/교양을 수강한 경우, 아래를 체크 후 <span class="highlight">수강한 학점</span>을 입력해주세요</h4>
+                <div class="extra-option-container">
+    <label>
+        <input type="checkbox" id="extra-artsandsports-checkbox">
+        음미대, 인문대 미학과 개설 전공/교양 수강
+    </label>
+    <input type="number" id="extra-artsandsports-count" min="0" placeholder="입력">
+</div>
+            </div>
+            
+            <div class="course-section">
+            <h3>7. 기타 (교양 5학점이상, 교양+전선 12학점 이상)</h3>
+            <div class="sub-section">
+                <h4><span class="highlight">위에서 입력하지 않은</span> 그 외 수강한 과목의 총 학점을 입력해주세요.</h4>
+                <div class="extra-option-container">
+                    <label for="extra-credits-input">
+                        기타 학점 (일반 교양, 전공 선택 등)
+                    </label>
+                    <input type="number" id="extra-credits-input" min="0" placeholder="입력" value="0">
+                </div>
+                <p class="description" style="margin-top: 10px;">
+                    *전공 선택, 지성의 열쇠, 베리타스, 예체능에서 최소 요구 학점을 초과한 학점(*교양5학점이상)은 기타에 합산되어 분석됩니다.
+                </p>
+            </div>
+        </div>
+            </div>
+        
+        <div class="checklist">
+            <h2>필수 수료 요건</h2>
+            <div class="check-item">
+                <input type="checkbox" id="volunteer" name="volunteer">
+                <label for="volunteer">60시간 이상의 봉사활동 (보라매병원 포함)</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" id="cpr" name="cpr">
+                <label for="cpr">CPR 교육 이수</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" id="leadership" name="leadership">
+                <label for="leadership">인성·리더십 교육 모듈1, 모듈2 이수</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" id="reading" name="reading">
+                <label for="reading">독서 일기 20편 이상 제출</label>
+            </div>
+        </div>
+        <div class="checklist">
+            <h2>선택 수료 요건</h2>
+            <div class="check-item">
+                <input type="checkbox" id="human" name="human">
+                <label for="human">인문사회계열 과목 20학점 이상 이수</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" id="study" name="study">
+                <label for="study">의학 연구의 실제(전선, 3학점) 수강</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" id="cpm" name="cpm">
+                <label for="cpm">CPM(맞춤형 교육과정) 이수 (*20학점 이상, 평점 2.0 이상)</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" id="teps" name="teps">
+                <label for="teps">TEPS 453점, IBT TOEFL 114점 이상 (*수료 직전 3학기 이내 성적)</label>
+            </div>
+        </div>
+        <button id="analyze-button">분석 시작!</button>
+        <p class="error-notice">화면 하단에 분석 결과가 표시됩니다.<br>오류 발생시 담당자에게 연락 부탁드립니다.<br>(교육행정국원 김영주(010-7914-3363))</p>
+
+        <div id="loading" class="hidden">
+            <p>분석 중입니다... 잠시만 기다려주세요.</p>
+        </div>
+        <div id="result-area">
+            </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
