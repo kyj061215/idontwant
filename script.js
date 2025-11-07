@@ -350,4 +350,4 @@ function captureResults() {
                 captureButton.disabled = false;
             }
         });
-} dlrjsms ㄴㅊ갸ㅔㅅ.ㅓㄴ
+} 
